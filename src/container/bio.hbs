@@ -1,0 +1,146 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+        <section>
+            {{> title data=name big=true}}
+            <hr>
+            <br>
+            <div><em><b>Born</b> on {{birthdate}}, in {{birthplace}}.</em></div> 
+            <div><em><b>Die</b> on {{deathdate}}, in {{deathplace}}.</em></div>
+            <hr>
+            <br>
+            <div> Was a {{nationality}} famouse scientists, working in a field of <strong>{{occupation}}</strong>.</div>
+            <div>Well known for:</div>
+            <ol>
+                {{#each known_for}}
+                <li>
+                    <i>{{field}}</i>
+                </li>
+                {{/each}}
+            </ol>
+            <hr>
+            <br>
+            {{> title data='Education:' big=false}}
+            <ul>
+                {{#each education}}
+                <li>
+                    <div>{{degree}}</div>
+                    <div><em>{{field}}</em></div>
+                    <div><b>{{institution}}</b></div>
+                    <div><time>{{year}}</time></div>
+                </li>
+                {{/each}}
+            </ul>
+             <hr>
+            <br>
+            {{> title data='Publications:' big=false}}
+            <ul>
+                {{#each notable_publications}}
+                <br>
+                <li>
+                    <div><b>"{{title}}"</b></div>
+                    <div><time>{{year}}</time></div>
+                    <div><i>Published by: {{publisher}}</i></div>
+                </li>
+                {{/each}}
+            </ul>
+            <hr>
+            <br>
+            {{> title data='Personal life:' big=false}}
+            <ul>
+                {{#each partners}}
+                <br>
+                <li>
+                    
+                    <div><b>{{name}}</b></div>
+                    <div><em>{{relationship}}</em></div>
+                    <div><time>{{years}}</time></div>
+                </li>
+                {{/each}}
+            </ul>
+            <hr>
+            <br>
+            {{> title data='Awards:' big=false}}
+            <ul>
+                {{#each awards}}
+                <br>
+                <li>
+                    
+                    <div><b>{{title}}</b></div>
+                    <div><time>{{year}}</time></div>
+                    <div><em>{{description}}</em></div>
+                </li>
+                {{/each}}
+            </ul>
+            <hr>
+            <br>
+            {{> title data='Influences:' big=false}}
+            <ol>
+                {{#each influences}}
+                <br>
+                <li>
+                    <div><em>{{name}}</em></div>
+                </li>
+                {{/each}}
+            </ol>
+            <hr>
+            <br>
+            {{> title data='Influenced:' big=false}}
+            <ol>
+                {{#each influenced}}
+                <br>
+                <li>
+                    <div><em>{{name}}</em></div>
+                </li>
+                {{/each}}
+            </ol>
+            <hr>
+            <br>
+            {{> title data='Famouse quotes:' big=false}}
+            <ul>
+                {{#each quotes}}
+                <br>
+                <li>
+                    <div><em><q>{{quote}}</q></em></div>
+                </li>
+                {{/each}}
+            </ul>
+            <hr>
+            <br>
+            {{> title data='Major discoveries:' big=false}}
+            <ul>
+                {{#each major_discoveries}}
+                <br>
+                <li>
+                    <div><b>{{title}}</b></div>
+                    <div><time>{{year}}</time></div>
+                    <div><em>"{{description}}"</em></div>
+                </li>
+                {{/each}}
+            </ul>
+            <hr>
+            <br>
+            {{> title data='Contributions:' big=false}}
+            <ul>
+                {{#with contributions}}
+                <br>
+                <li>
+                    <div><b>{{title}}</b></div>
+                    <div><em>"{{description}}"</em></div>
+                    <div><time>{{year}}</time></div>
+                    <div>Field: {{field}}</div>
+                </li>
+                {{/with}}
+            </ul>
+        </section>
+    </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
