@@ -1,0 +1,141 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+         {{> title data="IT Languages" big=true}}
+         <hr>
+         
+            <section>
+                
+                <ol>
+                    {{#each web.languages}}
+                    <br>
+                    <li>
+                        <div><strong>{{name}}</strong></div>
+                        <div>Version: <em>{{version}}</em></div>
+                        <div><q><i>{{description}}</i></q></div>
+                        
+                        <br>
+                        
+                        {{#if elements}}<div><b>Elements:</b>
+                        </div>{{/if}}
+                            {{#each elements}}
+                            <ul>
+                                <br>
+                                <li>
+                                    <div>
+                                        <table border="1">
+                                            <tr>
+                                            <td>
+                                                <code>{{name}}</code>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div><em>{{description}}</em></div>
+                                    {{#if attributes}}<div>
+                                        <b>Attributes:</b>
+                                    </div>{{/if}}
+                                    <ol>
+                                        {{#each attributes}} 
+                                        <li>
+                                            <div>
+                                                {{name}}:  
+                                                <em>{{description}}</em>
+                                            </div>
+                                        </li>
+                                        {{/each}}
+                                    </ol>
+                                </li>   
+                            </ul>
+                            {{/each}}
+
+                        {{#if properties}}<div><b>Properties:</b>
+                        </div>{{/if}}
+                            {{#each properties}}
+                            <ul>
+                                <br>
+                                <li>
+
+                                    <div>
+                                        <table border="1">
+                                            <tr>
+                                            <td>
+                                                <code>{{name}}</code>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div><em>{{description}}</em></div>
+                                    {{#if values}}<div>
+                                        <b>Values:</b>
+                                    </div>{{/if}}
+                                    <ol>
+                                        {{#each values}} 
+                                        <li>
+                                            <div>
+                                                {{value}}:  
+                                                <em>{{description}}</em>
+                                            </div>
+                                        </li>
+                                        {{/each}}
+                                    </ol>
+                                </li>   
+                            </ul>
+                            {{/each}}
+                        
+                        {{#if functions}}<div><b>Functions:</b>
+                        </div>{{/if}}
+                            {{#each functions}}
+                            <ul>
+                                <br>
+                                <li>
+                                    
+                                    <div>
+                                        <table border="1">
+                                            <tr>
+                                            <td>
+                                                <code>{{name}}</code>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div><em>{{description}}</em></div>
+                                    {{#if parameters}}<div>
+                                        <b>Parameters:</b>
+                                    </div>{{/if}}
+                                    <ol>
+                                        {{#each parameters}} 
+                                        <li>
+                                            <div>
+                                                {{name}} 
+                                            </div> 
+                                            <div>
+                                                <u>{{type}}</u>
+                                            </div><em>{{description}}</em>
+                                        </li>
+                                        {{/each}}
+                                    </ol>
+                                </li>   
+                            </ul>
+                            {{/each}}
+
+
+                    {{/each}}
+                    </li>
+                </ol>
+                
+            </section>
+        
+    </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
