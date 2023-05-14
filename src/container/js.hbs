@@ -1,0 +1,76 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+         {{> title data=name big=true}}
+         <hr>
+         <br>
+         <div>Description: <em>{{description}}</em>
+         {{#with history}}
+         <i>Founded in <time>{{year}} by {{founder}}.</time></i>
+         {{/with}}
+         </div>
+         
+         
+        <hr>
+        <section>
+        <div>{{> title data="Types:" big=false}}</div>
+                <ul>
+                    {{#each types}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+        <hr>
+        <div>{{> title data="Syntax:" big=false}}</div>
+                <ul>
+                    {{#each syntax}}
+                        <li>{{@key}}:
+                            <ul>
+                                {{#each this}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    {{/each}}
+                </ul>
+        <hr>
+        <div>{{> title data="Main features:" big=false}}</div>
+                <ol>
+                    {{#each features}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ol>
+        <hr>
+        <div>{{> title data="Popular libraries:" big=false}}</div>
+                <ul>
+                    {{#each libraries}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+        <hr>
+        <div>{{> title data="Tools:" big=false}}</div>
+                <ul>
+                    {{#each tools}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+        <hr>
+        <div>{{> title data="Community:" big=false}}</div>
+                <ol>
+                    {{#each community}}
+                    <li><em>{{name}}</em> ({{type}})</li>
+                    {{/each}}
+                </ol>
+        <hr>           
+        </section>
+        
+    </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
