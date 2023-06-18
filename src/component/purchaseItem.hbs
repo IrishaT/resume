@@ -1,0 +1,46 @@
+<hr>
+    <div class="card-outline">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-3">
+                    <div class="card-outline">
+                        <p>{{number}}</p>
+                        <h4>{{status}}</h4>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card-outline">
+                        {{#with amount}}
+                        <div class="text-centre mt-4">{{title}}</div>
+                        <h4 class="text-centre my-2">{{value}}</h3>
+                        {{/with}}
+                    </div>
+                </div>
+
+                <div class="col-5">
+                    <div class="row">
+                    {{#each images}}
+                    <div class="col-2">
+                    <img src={{this}} class="m-3">
+                    </div>
+                    {{/each}}
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card-outline">
+                        {{#with button}}
+                            <br>
+                            {{#if isPrimary}}
+                            <a href={{link}} class="btn btn-primary my-3">
+                                {{text}}
+                            </a>
+                            {{/if}}
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
