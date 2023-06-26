@@ -1,0 +1,91 @@
+<main class="m-5">
+    <div class="nav">
+        {{#each navigation.links}}
+            <div class="nav-item">
+                <a href={{href}} class="nav-link">
+                    {{text}}
+                </a>
+            </div>
+        {{/each}}
+        <div class="nav-item nav-link disabled">Disabled</div>
+    </div>
+
+    {{#with newsBlock}}
+    <h1 class="text-center mt-3">
+        {{title}}
+    </h1>
+    <section class="row">
+        {{#each cards}}
+        <div class="col-3">
+            <div class="alert alert-dark">
+                <b>{{title}}</b>
+                {{#if isTop}}
+                <span class="badge rounded-pill text-bg-danger text-uppercase">top
+                </span>
+                {{/if}}
+                {{#if isNew}}
+                <span class="badge rounded-pill text-bg-success text-uppercase">new
+                </span>
+                {{/if}}
+                <p>{{description}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </section>
+    {{/with}}
+
+    <br>
+    <hr>
+    <br>
+
+    {{#with goodsBlock}}
+
+    
+    
+    
+    <div class="nav nav-tabs mb-3">
+        {{#each tabs}}
+            <div class="nav-item">
+            {{#if isDisabled}}
+            <div class="nav-link disabled">
+                    {{text}}
+            </div>
+            {{else}}
+            <div class="nav-link active">
+                    {{text}}
+            </div>
+            {{/if}}
+            </div>
+        {{/each}}
+    </div>
+    </div>
+
+    <section class="row">
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card">
+        
+                    <img class="card-img-top" 
+                    src={{image}}>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                        {{title}}
+                        {{#if isHot}}
+                        <span class="badge rounded-pill text-bg-warning text-uppercase">hot
+                        </span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge rounded-pill text-bg-success text-uppercase">new
+                        </span>
+                        {{/if}}
+                        </h5>
+                        <p>{{description}}</p>    
+                    </div>
+            </div>
+        </div>
+        {{/each}}
+    </section>
+    {{/with}}
+
+</main>
