@@ -1,0 +1,72 @@
+<main class="m-5">
+
+    <div class="nav">
+        {{#each navigation.links}}
+            <div class="nav-item">
+                <a href={{href}} class="nav-link">
+                    {{text}}
+                </a>
+            </div>
+        {{/each}}
+        <div class="nav-item nav-link disabled">Disabled</div>
+    </div>
+
+    <sector class="row">
+        <div class="col-3">
+            {{#with header}}
+            <h1 class="my-5">{{title}}</h1>
+            <button class="btn btn-outline-secondary">
+                {{#with button}}
+                    <a href={{link}} class="text-secondary">{{text}}</a>
+                {{/with}}
+            </button>
+            {{/with}}
+            </div>
+        </div>
+    </sector>
+
+    <br>
+    <hr>
+    <br>
+
+    {{#each goodsBlock}}
+        {{> cartGoodsItem}}
+    {{/each}}
+
+    <br>
+    <hr>
+    <br>
+
+    <section class="row">
+        <div class="col-5">
+            {{#with total}}
+                <h2 class="my-3">{{title}}</h2>
+                <strong class="display-3 my-3">{{amount}}</strong>
+                <p class="my-2">{{delivery}}</p>
+                <div>
+                    {{#each buttons}}
+                    <br>
+
+                    {{#if isSuccess}}
+                    <a href={{link}} class="btn btn-success my-3">
+                        {{text}}
+                    </a>
+                    {{/if}}
+
+                    {{#if isOutline}}
+                    <a href={{link}} class="btn btn-outline-success my-3">
+                        {{text}}
+                    </a>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            {{/with}}
+        </div>
+    </section>
+
+    <br>
+    <hr>
+    <br>
+    
+
+</main>
