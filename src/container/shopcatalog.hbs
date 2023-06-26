@@ -1,0 +1,161 @@
+<main class="m-5">
+
+    <div class="card">
+    <div class="nav">
+        {{#each navigation.links}}
+            <div class="nav-item">
+                <a href={{href}} class="nav-link">
+                    {{text}}
+                </a>
+            </div>
+        {{/each}}
+        <div class="nav-item nav-link disabled">Disabled</div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    
+    <ol class="breadcrumb">
+         {{#each breadcrumb}}
+         {{#if url}}
+         <li class="breadcrumb-item">
+            <a href={{url}}>
+                {{name}}
+            </a>
+         </li>
+            {{else}}
+        <li class="breadcrumb-item">
+            <a>
+                {{name}}
+            </a>
+         </li>
+        {{/if}}
+        {{/each}}
+    </ol>
+
+    <br>
+    <h1>{{header}}</h1>
+    <br>
+
+    <div class="row"> 
+    {{#each sortBlock}}
+    <div class="col-2">
+            <div class="form">
+            
+            <select class="form-select">
+                
+                
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value={{value}}>{{text}}</option>
+                    {{/each}}
+                
+                
+                </select>
+            </div>
+    </div>
+    {{/each}}
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+            <div class="card-body">
+            {{#with filterBlock}}
+
+                {{#with sellers}}
+                <div>{{title}}</div>
+                {{#each list}}
+                <div class="form-check my-1">
+                    
+                    <label class="form-check-label">{{value}}</label>
+                    <input class="form-check-input" type="checkbox">
+                    
+                </div>
+                {{/each}}
+                {{/with}}
+
+                <hr>
+                
+                {{#with brands}}
+                <div>{{title}}</div>
+
+                <div class="form my-1">
+                    <p class="form-control text-secondary">
+                        {{input.placeholder}}
+                    </p>
+                </div>
+
+                {{#each options}}
+                <div class="form-check my-1">
+                    
+                    <label class="form-check-label">{{value}}</label>
+                    <input class="form-check-input" type="checkbox">
+                    
+                </div>
+                {{/each}}
+                {{/with}}
+
+                <hr>
+                {{#with price}}
+                <div>{{title}}</div>
+                <div class="form my-1">
+                    <p class="form-control text-secondary">
+                        {{range.from}}
+                    </p>
+                </div>
+                <div class="form my-1">
+                    <p class="form-control text-secondary">
+                        {{range.to}}
+                    </p>
+                </div>
+
+                {{#with button}}
+                <a href={{link}} class="btn btn-outline-secondary">{{text}}</a>
+                {{/with}}
+
+                {{/with}}
+                
+                <hr>
+
+                {{#each filterList}}
+                <hr> 
+                <div>{{title}}</div>
+                {{#each options}}
+                
+                <div class="form-check my-1">
+                    <label class="form-check-label">{{value}}</label>
+                    <input class="form-check-input" type="checkbox">
+                </div>
+                {{/each}}
+                {{/each}}
+
+            {{/with}}
+            </div>
+            </div>
+        </div>
+    
+
+
+        <div class="col-9">
+            <div class="card">
+            
+            {{> goodsList}}
+
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+    
+
+
+</main>

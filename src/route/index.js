@@ -1230,18 +1230,16 @@ router.get('/task21', function (req, res) {
       },
     ],
 
-      list_name: [
-        {
-          text: 'Github',
-          url: 'https://github.com/',
-        },
-        {
-          text: 'Bootstrap',
-          url: 'https://getbootstrap.com/',
-        },
-      ],
-    },
-
+    list_name: [
+      {
+        text: 'Github',
+        url: 'https://github.com/',
+      },
+      {
+        text: 'Bootstrap',
+        url: 'https://getbootstrap.com/',
+      },
+    ],
   })
 })
 
@@ -1602,9 +1600,10 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Exit',
           href: null,
+        },
       ],
     },
-        
+
     newsBlock: {
       title: 'Latest News',
       cards: [
@@ -1667,12 +1666,11 @@ router.get('/shophome', function (req, res) {
             'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
           isTop: false,
           isNew: true,
-
         },
       ],
     },
-   })
- })
+  })
+})
 
 // router.get Створює нам один ентпоїнт
 
@@ -2124,7 +2122,6 @@ router.get('/shoporder', function (req, res) {
 
 // ================================================================
 
-
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -2133,7 +2130,6 @@ router.get('/shopprofile', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
-
     layout: 'shop',
     navigation: {
       links: [
@@ -2151,6 +2147,8 @@ router.get('/shopprofile', function (req, res) {
         },
       ],
     },
+  })
+})
 
 // ================================================================
 
@@ -2162,7 +2160,6 @@ router.get('/shopcart', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
-
     header: {
       title: 'Кошик',
       button: {
@@ -2288,177 +2285,553 @@ router.get('/shopcart', function (req, res) {
         },
       ],
 
-      
-    header: 'Мої замовлення',
+      header: 'Мої замовлення',
 
-    purchase: {
-      tabs: ['Всі замовлення', 'Гарантія та повернення'],
-      actionBlock: {
-        input: { placeholder: 'Placeholder' },
-        buttons: [
-          {
-            text: 'Знайти',
-            link: 'https://www.youtube.com/',
-            isSuccess: true,
-          },
-          {
-            text: 'Виділити все',
-            link: 'https://www.youtube.com/',
-            isOutline: true,
-          },
-          {
-            text: 'Очистити все',
-            link: 'https://www.youtube.com/',
-            isDanger: true,
-          },
-        ],
-      },
-      itemList: [
-        {
-          number: '№12587463 від 01.01.2023',
-          status: 'Виконано',
-          amount: { title: 'Сума', value: '25 000 ₴' },
-          images: ['https://picsum.photos/110/100'],
-          button: {
-            text: 'Детальніше',
-            link: 'https://www.youtube.com/',
-            isPrimary: true,
-          },
-        },
-        {
-          number: '№12587463 від 01.01.2023',
-          status: 'Виконано',
-          amount: { title: 'Сума', value: '25 000 ₴' },
-          images: [
-            'https://picsum.photos/110/100',
-            'https://picsum.photos/110/100',
-            'https://picsum.photos/110/100',
-          ],
-          button: {
-            text: 'Детальніше',
-            link: 'https://www.youtube.com/',
-            isPrimary: true,
-          },
-        },
-        {
-          number: '№12587463 від 01.01.2023',
-          status: 'Виконано',
-          amount: { title: 'Сума', value: '25 000 ₴' },
-          images: [
-            'https://picsum.photos/110/100',
-            'https://picsum.photos/110/100',
-          ],
-          button: {
-            text: 'Детальніше',
-            link: 'https://www.youtube.com/',
-            isPrimary: true,
-          },
-        },
-      ],
-    },
-    userInfo: {
-      title: 'Особиста інформація',
-      profileData: {
-        title: 'Особисті дані',
-        fullName: {
-          surname: {
-            title: 'Прізвище',
-            value: 'Іванов',
-          },
-          name: {
-            title: 'Ім’я',
-            value: 'Іван',
-          },
-          middleName: {
-            title: 'По-батькові',
-            value: 'Іванович',
-          },
-        },
-        otherInfo: {
-          birthday: {
-            title: 'Дата народження',
-            value: '01.01.2000',
-          },
-          sex: {
-            title: 'Стать',
-            value: 'Чоловіча',
-          },
-          language: {
-            title: 'Мова',
-            value: 'Українська',
-          },
-        },
-      },
-      buttons: [
-        {
-          text: 'Редагувати',
-          link: 'https://www.youtube.com/',
-          isPrimary: true,
-        },
-        {
-          text: 'Очистити',
-          link: 'https://www.youtube.com/',
-          isSecondary: true,
-        },
-        {
-          text: 'Видалити',
-          link: 'https://www.youtube.com/',
-          isDanger: true,
-        },
-      ],
-      recipients: {
-        title: 'Отримувачі',
-        users: [
-          {
-            name: 'Іванов Іван Іванович',
-            phone: '+38 (098) 222 22 22',
-            button: {
-              text: 'Редагувати',
+      purchase: {
+        tabs: ['Всі замовлення', 'Гарантія та повернення'],
+        actionBlock: {
+          input: { placeholder: 'Placeholder' },
+          buttons: [
+            {
+              text: 'Знайти',
               link: 'https://www.youtube.com/',
+              isSuccess: true,
             },
-          },
-          {
-            name: 'Петров Петро Петрович',
-            phone: '+38 (098) 111 11 11',
-            button: {
-              text: 'Редагувати',
+            {
+              text: 'Виділити все',
               link: 'https://www.youtube.com/',
+              isOutline: true,
             },
-          },
-        ],
-      },
-      contacts: {
-        title: 'Контакти',
-        contactData: [
+            {
+              text: 'Очистити все',
+              link: 'https://www.youtube.com/',
+              isDanger: true,
+            },
+          ],
+        },
+        itemList: [
           {
-            title: 'Номер телефону',
-            value: '+38 (098) 222 22 22',
+            number: '№12587463 від 01.01.2023',
+            status: 'Виконано',
+            amount: { title: 'Сума', value: '25 000 ₴' },
+            images: ['https://picsum.photos/110/100'],
             button: {
-              text: 'Редагувати',
+              text: 'Детальніше',
               link: 'https://www.youtube.com/',
               isPrimary: true,
             },
           },
           {
-            title: 'Додатковий номер телефону',
-            value: '+38 (098) 111 11 11',
+            number: '№12587463 від 01.01.2023',
+            status: 'Виконано',
+            amount: { title: 'Сума', value: '25 000 ₴' },
+            images: [
+              'https://picsum.photos/110/100',
+              'https://picsum.photos/110/100',
+              'https://picsum.photos/110/100',
+            ],
             button: {
-              text: 'Очистити',
+              text: 'Детальніше',
               link: 'https://www.youtube.com/',
-              isSecondary: true,
+              isPrimary: true,
             },
           },
           {
-            title: 'Електронна адреса',
-            value: 'ivanivanov@ukr.net',
+            number: '№12587463 від 01.01.2023',
+            status: 'Виконано',
+            amount: { title: 'Сума', value: '25 000 ₴' },
+            images: [
+              'https://picsum.photos/110/100',
+              'https://picsum.photos/110/100',
+            ],
             button: {
-              text: 'Видалити',
+              text: 'Детальніше',
               link: 'https://www.youtube.com/',
-              isDanger: true,
+              isPrimary: true,
             },
           },
         ],
       },
+      userInfo: {
+        title: 'Особиста інформація',
+        profileData: {
+          title: 'Особисті дані',
+          fullName: {
+            surname: {
+              title: 'Прізвище',
+              value: 'Іванов',
+            },
+            name: {
+              title: 'Ім’я',
+              value: 'Іван',
+            },
+            middleName: {
+              title: 'По-батькові',
+              value: 'Іванович',
+            },
+          },
+          otherInfo: {
+            birthday: {
+              title: 'Дата народження',
+              value: '01.01.2000',
+            },
+            sex: {
+              title: 'Стать',
+              value: 'Чоловіча',
+            },
+            language: {
+              title: 'Мова',
+              value: 'Українська',
+            },
+          },
+        },
+        buttons: [
+          {
+            text: 'Редагувати',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Очистити',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+          {
+            text: 'Видалити',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+        recipients: {
+          title: 'Отримувачі',
+          users: [
+            {
+              name: 'Іванов Іван Іванович',
+              phone: '+38 (098) 222 22 22',
+              button: {
+                text: 'Редагувати',
+                link: 'https://www.youtube.com/',
+              },
+            },
+            {
+              name: 'Петров Петро Петрович',
+              phone: '+38 (098) 111 11 11',
+              button: {
+                text: 'Редагувати',
+                link: 'https://www.youtube.com/',
+              },
+            },
+          ],
+        },
+        contacts: {
+          title: 'Контакти',
+          contactData: [
+            {
+              title: 'Номер телефону',
+              value: '+38 (098) 222 22 22',
+              button: {
+                text: 'Редагувати',
+                link: 'https://www.youtube.com/',
+                isPrimary: true,
+              },
+            },
+            {
+              title: 'Додатковий номер телефону',
+              value: '+38 (098) 111 11 11',
+              button: {
+                text: 'Очистити',
+                link: 'https://www.youtube.com/',
+                isSecondary: true,
+              },
+            },
+            {
+              title: 'Електронна адреса',
+              value: 'ivanivanov@ukr.net',
+              button: {
+                text: 'Видалити',
+                link: 'https://www.youtube.com/',
+                isDanger: true,
+              },
+            },
+          ],
+        },
+      },
+
+      footer: [
+        [
+          {
+            text: 'Home',
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Trending',
+            link: 'https://www.youtube.com/feed/trending',
+          },
+          {
+            text: 'Subscriptions',
+            link: 'https://www.youtube.com/feed/subscriptions',
+          },
+          {
+            text: 'Library',
+            link: 'https://www.youtube.com/feed/library',
+          },
+        ],
+        [
+          {
+            text: 'History',
+            link: 'https://www.youtube.com/feed/history',
+          },
+          {
+            text: 'Your Videos',
+            link: 'https://www.youtube.com/feed/my_videos',
+          },
+          {
+            text: 'Live',
+            link: 'https://www.youtube.com/live',
+          },
+          {
+            text: 'Settings',
+            link: 'https://www.youtube.com/account',
+          },
+        ],
+        [
+          {
+            text: 'Watch Later',
+            link: 'https://www.youtube.com/playlist?list=WL',
+          },
+          {
+            text: 'Liked Videos',
+            link: 'https://www.youtube.com/playlist?list=LL',
+          },
+          {
+            text: 'Music',
+            link: 'https://www.youtube.com/music',
+          },
+          {
+            text: 'Gaming',
+            link: 'https://www.youtube.com/gaming',
+          },
+        ],
+        [
+          {
+            text: 'Sports',
+            link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+          },
+          {
+            text: 'News',
+            link: 'https://www.youtube.com/news',
+          },
+          {
+            text: 'Fashion & Beauty',
+            link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+          },
+          {
+            text: 'Learning',
+            link: 'https://www.youtube.com/learning',
+          },
+        ],
+        [
+          {
+            text: 'Report History',
+            link: 'https://www.youtube.com/feed/history/report_history',
+          },
+          {
+            text: 'Help',
+            link: 'https://support.google.com/youtube/?hl=en',
+          },
+          {
+            text: 'Send Feedback',
+            link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+          },
+          {
+            text: 'About',
+            link: 'https://www.youtube.com/about/',
+          },
+        ],
+      ],
+    },
+  })
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopcatalog', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopcatalog', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+    breadcrumb: [
+      { name: 'Головна', url: 'https://github.com/' },
+      {
+        name: "Комп'ютери та ноутбуки",
+        url: 'https://www.google.com/',
+      },
+      { name: 'Ноутбуки', url: null },
+    ],
+    header: 'Ноутбуки',
+    sortBlock: [
+      {
+        placeholder: 'За ціною',
+        options: [
+          { value: '1', text: 'За зростанням' },
+          { value: '2', text: 'За спаданням' },
+        ],
+      },
+      {
+        placeholder: 'За новизною',
+        options: [
+          { value: '1', text: 'Спочатку нові' },
+          { value: '2', text: 'Спочатку старі' },
+        ],
+      },
+      {
+        placeholder: 'За рейтингом',
+        options: [
+          { value: '1', text: 'За зростанням' },
+          { value: '2', text: 'За спаданням' },
+        ],
+      },
+    ],
+    filterBlock: {
+      sellers: {
+        title: 'Продавець',
+        list: [{ value: 'Machinery' }, { value: 'інші' }],
+      },
+      brands: {
+        title: 'Бренд',
+        input: {
+          placeholder: 'Пошук',
+        },
+        options: [
+          { value: 'Acer' },
+          { value: 'Apple' },
+          { value: 'Asus' },
+          { value: 'Dell' },
+        ],
+      },
+      price: {
+        title: 'Ціна',
+        range: {
+          from: '8 000',
+          to: '30 000',
+        },
+        button: {
+          text: 'OK',
+          link: 'https://www.youtube.com/',
+        },
+      },
+
+      filterList: [
+        {
+          title: 'Готов к отправке',
+          options: [{ value: 'Готов к отправке' }],
+        },
+        {
+          title: 'Процесор',
+          options: [
+            { value: 'Intel Core i7' },
+            { value: 'Intel Core i5' },
+            { value: 'Intel Core i3' },
+            { value: 'AMD Ryzen 9' },
+          ],
+        },
+        {
+          title: 'Діагональ екрану',
+          options: [
+            { value: '13' },
+            { value: '14' },
+            { value: '15-16' },
+            { value: '17-18' },
+            { value: '9 - 12.5' },
+          ],
+        },
+        {
+          title: 'Оперативна пам’ять',
+          options: [
+            { value: '10 - 12ГБ' },
+            { value: '16 - 24ГБ' },
+            { value: '32ГБ і більше' },
+            { value: '4ГБ' },
+            { value: '6 - 8ГБ' },
+          ],
+        },
+        {
+          title: 'Операційна система',
+          options: [
+            { value: 'Chrome OS' },
+            { value: 'Linux' },
+            { value: 'Windows' },
+            { value: 'Mac OS' },
+            { value: 'Без ОС' },
+          ],
+        },
+      ],
+    },
+    goodsList: [
+      {
+        img: 'https://picsum.photos/400/200',
+        isHot: true,
+        isNew: true,
+        isFast: true,
+        isFree: true,
+        name: 'Ноут',
+        review: {
+          amount: 13,
+          text: 'відгуків',
+        },
+        price: '25 000 ₴',
+        delivery: 'Готовий до відправки',
+        buttons: [
+          {
+            text: 'Купити зараз',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Купити в кредит',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+        ],
+        characteristics: [
+          { title: 'Діагональ', value: '15,6' },
+          { title: 'Екран', value: 'IPS' },
+          {
+            title: 'Процесор',
+            value: 'Intel Core i5-1135G7',
+          },
+          { title: 'Оперативна пам’ять', value: '8 ГБ' },
+        ],
+      },
+      {
+        img: 'https://picsum.photos/400/200',
+        isFree: true,
+        name: 'Ноут',
+        review: {
+          amount: 13,
+          text: 'відгуків',
+        },
+        price: '25 000 ₴',
+        delivery: 'Готовий до відправки',
+        buttons: [
+          {
+            text: 'Купити зараз',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Купити в кредит',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+        ],
+        characteristics: [
+          { title: 'Діагональ', value: '15,6' },
+          { title: 'Екран', value: 'IPS' },
+          {
+            title: 'Процесор',
+            value: 'Intel Core i5-1135G7',
+          },
+          { title: 'Оперативна пам’ять', value: '8 ГБ' },
+        ],
+      },
+      {
+        img: 'https://picsum.photos/400/200',
+        isHot: true,
+        isFree: true,
+        name: 'Ноут',
+        review: {
+          amount: 13,
+          text: 'відгуків',
+        },
+        price: '25 000 ₴',
+        delivery: 'Готовий до відправки',
+        buttons: [
+          {
+            text: 'Купити зараз',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Купити в кредит',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+        ],
+        characteristics: [
+          { title: 'Діагональ', value: '15,6' },
+          { title: 'Екран', value: 'IPS' },
+          {
+            title: 'Процесор',
+            value: 'Intel Core i5-1135G7',
+          },
+          { title: 'Оперативна пам’ять', value: '8 ГБ' },
+        ],
+      },
+      {
+        img: 'https://picsum.photos/400/200',
+        isHot: true,
+        isFast: true,
+        name: 'Ноут',
+        review: {
+          amount: 13,
+          text: 'відгуків',
+        },
+        price: '25 000 ₴',
+        delivery: 'Готовий до відправки',
+        buttons: [
+          {
+            text: 'Купити зараз',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Купити в кредит',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+        ],
+        characteristics: [
+          { title: 'Діагональ', value: '15,6' },
+          { title: 'Екран', value: 'IPS' },
+          {
+            title: 'Процесор',
+            value: 'Intel Core i5-1135G7',
+          },
+          { title: 'Оперативна пам’ять', value: '8 ГБ' },
+        ],
+      },
+    ],
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+        },
+      ],
     },
 
     footer: [
@@ -2557,7 +2930,7 @@ router.get('/shopcart', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-// ================================================================
+// ================================================================// ================================================================
 
 // Підключаємо роутер до бек-енду
 
