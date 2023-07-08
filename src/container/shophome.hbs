@@ -2,12 +2,15 @@
     <div class="nav">
         {{#each navigation.links}}
             <div class="nav-item">
+                {{#if href}}
                 <a href={{href}} class="nav-link">
                     {{text}}
                 </a>
+                {{else}}
+                <div class="nav-item nav-link disabled">{{text}}</div>
+                {{/if}}
             </div>
         {{/each}}
-        <div class="nav-item nav-link disabled">Disabled</div>
     </div>
 
     {{#with newsBlock}}
